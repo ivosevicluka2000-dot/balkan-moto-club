@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,31 +47,9 @@
         font-family: 'Crimson Pro', serif;
       }
       
-      /* Cinematic Grain Overlay - Hidden on mobile for performance */
+      /* Cinematic Grain Overlay - Disabled for performance */
       .grain {
-        position: fixed;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-        opacity: 0.04;
-        pointer-events: none;
-        z-index: 9999;
-        animation: noise 0.5s infinite;
-      }
-
-      /* Disable grain on mobile/tablet for better performance */
-      @media (max-width: 1024px) {
-        .grain {
-          display: none !important;
-        }
-      }
-
-      @keyframes noise {
-        0% { transform: translate(0,0); }
-        50% { transform: translate(-5%,-5%); }
-        100% { transform: translate(5%,0); }
+        display: none;
       }
 
       ::-webkit-scrollbar {
@@ -89,17 +67,12 @@
 
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
-        transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
       .reveal.visible {
         opacity: 1;
         transform: translateY(0);
-      }
-
-      /* Smooth scroll for all browsers */
-      html {
-        scroll-behavior: smooth;
       }
 
       /* Better touch handling for mobile */

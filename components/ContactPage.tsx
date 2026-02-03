@@ -154,10 +154,10 @@ const ContactPage: React.FC = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-8 lg:space-y-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              <form onSubmit={handleSubmit} className="space-y-8 lg:space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                   <div className="relative group">
-                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Full Name</label>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mb-3 font-bold group-focus-within:text-brand transition-colors">Full Name</label>
                     <input 
                       required
                       type="text" 
@@ -165,11 +165,11 @@ const ContactPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Marko Petrovic"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-white/5 border border-white/20 px-4 py-4 text-base font-light focus:outline-none focus:border-brand transition-colors placeholder:text-white/30"
                     />
                   </div>
                   <div className="relative group">
-                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Email Address</label>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mb-3 font-bold group-focus-within:text-brand transition-colors">Email Address</label>
                     <input 
                       required
                       type="email" 
@@ -177,30 +177,30 @@ const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="marko@provider.com"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-white/5 border border-white/20 px-4 py-4 text-base font-light focus:outline-none focus:border-brand transition-colors placeholder:text-white/30"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                   <div className="relative group">
-                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Primary City</label>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mb-3 font-bold group-focus-within:text-brand transition-colors">Primary City</label>
                     <input 
                       type="text" 
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
                       placeholder="e.g. Belgrade, RS"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-white/5 border border-white/20 px-4 py-4 text-base font-light focus:outline-none focus:border-brand transition-colors placeholder:text-white/30"
                     />
                   </div>
                   <div className="relative group">
-                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Inquiry Subject</label>
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mb-3 font-bold group-focus-within:text-brand transition-colors">Inquiry Subject</label>
                     <select 
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors appearance-none"
+                      className="w-full bg-white/5 border border-white/20 px-4 py-4 text-base font-light focus:outline-none focus:border-brand transition-colors cursor-pointer"
                     >
                       <option className="bg-[#111]" value="General Inquiry">General Inquiry</option>
                       <option className="bg-[#111]" value="Joining the Club">Joining the Club</option>
@@ -212,7 +212,7 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="relative group">
-                  <label className="block text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-bold group-focus-within:text-white transition-colors">Your Message</label>
+                  <label className="block text-[10px] uppercase tracking-[0.3em] text-white/50 mb-4 font-bold group-focus-within:text-white transition-colors">Your Message</label>
                   <textarea 
                     required
                     rows={4}
@@ -220,19 +220,19 @@ const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe your request or proposal..."
-                    className="w-full bg-transparent border-b border-white/10 py-4 text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5 resize-none"
+                    className="w-full bg-white/5 border border-white/20 p-4 text-sm font-light focus:outline-none focus:border-brand transition-colors placeholder:text-white/30 resize-none"
                   />
                 </div>
 
-                <div className="flex items-center space-x-4 group cursor-pointer">
+                <div className="flex items-start space-x-4 group cursor-pointer">
                   <input 
                     type="checkbox" 
                     name="consent"
                     checked={formData.consent}
                     onChange={handleChange}
-                    className="w-4 h-4 bg-transparent border border-white/20 accent-white cursor-pointer" 
+                    className="w-5 h-5 mt-0.5 bg-transparent border-2 border-white/30 accent-brand cursor-pointer flex-shrink-0" 
                   />
-                  <span className="text-[10px] text-white/40 uppercase tracking-widest font-medium group-hover:text-white/60 transition-colors">
+                  <span className="text-sm text-white/60 font-light group-hover:text-white/80 transition-colors">
                     I understand that all communications are handled with discretion.
                   </span>
                 </div>
@@ -240,7 +240,7 @@ const ContactPage: React.FC = () => {
                 <div className="pt-8">
                   <button 
                     disabled={status === 'submitting'}
-                    className={`group relative px-16 py-6 bg-white text-black text-[11px] font-bold uppercase tracking-[0.5em] transition-all duration-500 flex items-center justify-center min-w-[280px] ${status === 'submitting' ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
+                    className={`group relative px-12 py-5 bg-brand text-white text-xs font-bold uppercase tracking-[0.3em] transition-all duration-300 flex items-center justify-center min-w-[240px] ${status === 'submitting' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white hover:text-black active:scale-95'}`}
                   >
                     {status === 'submitting' ? 'Transmitting...' : 'Send Message'}
                   </button>

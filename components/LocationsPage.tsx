@@ -70,7 +70,7 @@ const LocationsPage: React.FC = () => {
         html: `
           <div class="relative group">
             <div class="w-4 h-4 bg-brand rounded-full border-2 border-black transition-transform duration-300 group-hover:scale-150 shadow-[0_0_15px_rgba(207,10,10,0.8)]"></div>
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black border border-brand/30 text-brand px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-[8px] uppercase tracking-widest z-50">
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black border border-brand/30 text-brand px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-[10px] uppercase tracking-widest z-50">
               ${loc.name}
             </div>
           </div>
@@ -108,24 +108,24 @@ const LocationsPage: React.FC = () => {
   return (
     <div className="pt-[100px] h-screen flex flex-col bg-[#050505] overflow-hidden">
       {/* Header / Controls */}
-      <div className="flex-none px-6 lg:px-12 py-8 border-b border-white/5 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div className="flex-none px-6 lg:px-12 py-8 border-b border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6">
         <div>
           <h1 className="serif text-3xl lg:text-4xl">The Network</h1>
-          <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] mt-2">Verified Chapters & Partners</p>
+          <p className="text-white/50 text-xs uppercase tracking-[0.3em] mt-2">Verified Chapters & Partners</p>
         </div>
 
         <div className="flex items-center gap-4 w-full lg:w-auto">
           {/* Toggle */}
-          <div className="bg-white/5 p-1 flex rounded-none border border-white/10 w-full lg:w-[300px]">
+          <div className="bg-white/5 p-1 flex rounded-none border border-white/20 w-full lg:w-[300px]">
             <button 
               onClick={() => setActiveType('shop')}
-              className={`flex-1 py-3 text-[10px] uppercase tracking-widest font-bold transition-all ${activeType === 'shop' ? 'bg-white text-black' : 'text-white/40 hover:text-white'}`}
+              className={`flex-1 py-3 text-xs uppercase tracking-widest font-bold transition-all ${activeType === 'shop' ? 'bg-brand text-white' : 'text-white/60 hover:text-white'}`}
             >
               Shops
             </button>
             <button 
               onClick={() => setActiveType('service')}
-              className={`flex-1 py-3 text-[10px] uppercase tracking-widest font-bold transition-all ${activeType === 'service' ? 'bg-white text-black' : 'text-white/40 hover:text-white'}`}
+              className={`flex-1 py-3 text-xs uppercase tracking-widest font-bold transition-all ${activeType === 'service' ? 'bg-brand text-white' : 'text-white/60 hover:text-white'}`}
             >
               Services
             </button>
@@ -138,10 +138,10 @@ const LocationsPage: React.FC = () => {
               placeholder="SEARCH BY CITY OR NAME..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 px-6 py-3.5 text-[10px] uppercase tracking-widest focus:outline-none focus:border-white/40 transition-colors placeholder:text-white/20"
+              className="w-full bg-white/5 border border-white/20 px-6 py-3.5 text-xs uppercase tracking-widest focus:outline-none focus:border-brand transition-colors placeholder:text-white/30"
             />
             <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
-              <svg className="w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
           </div>
         </div>
@@ -152,39 +152,39 @@ const LocationsPage: React.FC = () => {
         
         {/* List View (Left) */}
         <div className={`
-          absolute lg:relative inset-0 lg:inset-auto z-[900] lg:z-auto bg-[#050505] lg:w-[450px] border-r border-white/5 flex flex-col transition-transform duration-500
+          absolute lg:relative inset-0 lg:inset-auto z-[900] lg:z-auto bg-[#050505] lg:w-[450px] border-r border-white/10 flex flex-col transition-transform duration-500
           ${isMobileListOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}>
-          <div className="p-6 bg-[#0a0a0a] border-b border-white/5 lg:hidden flex justify-between items-center">
-             <span className="text-[10px] uppercase tracking-widest font-bold">Results ({filteredLocations.length})</span>
-             <button onClick={() => setIsMobileListOpen(false)} className="text-white/50 text-[10px] uppercase tracking-widest">Close</button>
+          <div className="p-6 bg-[#0a0a0a] border-b border-white/10 lg:hidden flex justify-between items-center">
+             <span className="text-xs uppercase tracking-widest font-bold">Results ({filteredLocations.length})</span>
+             <button onClick={() => setIsMobileListOpen(false)} className="text-white/70 text-xs uppercase tracking-widest">Close</button>
           </div>
           
           <div className="flex-1 overflow-y-auto custom-scrollbar">
             {filteredLocations.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center p-12 text-center">
-                <div className="w-12 h-12 border border-white/10 flex items-center justify-center mb-6 rotate-45">
-                   <span className="text-white/20 -rotate-45 font-bold">!</span>
+                <div className="w-12 h-12 border border-white/20 flex items-center justify-center mb-6 rotate-45">
+                   <span className="text-white/40 -rotate-45 font-bold">!</span>
                 </div>
-                <p className="text-white/20 text-[10px] uppercase tracking-widest">No connections found in this sector.</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest">No connections found in this sector.</p>
               </div>
             ) : (
               filteredLocations.map(loc => (
                 <button 
                   key={loc.id}
                   onClick={() => handleLocationSelect(loc)}
-                  className={`w-full text-left p-8 border-b border-white/5 group transition-all hover:bg-white/[0.02] ${selectedLocation?.id === loc.id ? 'bg-white/[0.04]' : ''}`}
+                  className={`w-full text-left p-8 border-b border-white/10 group transition-all hover:bg-white/[0.04] ${selectedLocation?.id === loc.id ? 'bg-white/[0.06]' : ''}`}
                 >
                   <div className="flex justify-between items-start mb-4">
-                    <span className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-medium">{loc.category}</span>
-                    <span className="text-[10px] text-white/20 uppercase tracking-widest">{loc.city}</span>
+                    <span className="text-xs text-white/50 uppercase tracking-[0.2em] font-medium">{loc.category}</span>
+                    <span className="text-xs text-white/40 uppercase tracking-widest">{loc.city}</span>
                   </div>
                   <h3 className="serif text-xl mb-3 group-hover:translate-x-1 transition-transform">{loc.name}</h3>
-                  <p className="text-white/40 text-[11px] font-light leading-relaxed line-clamp-2">{loc.description}</p>
+                  <p className="text-white/60 text-sm font-light leading-relaxed line-clamp-2">{loc.description}</p>
                   
                   <div className="mt-6 flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-4 h-[1px] bg-white/40" />
-                    <span className="text-[8px] uppercase tracking-[0.3em] font-bold">View Location Details</span>
+                    <div className="w-4 h-[1px] bg-white/50" />
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">View Location Details</span>
                   </div>
                 </button>
               ))
@@ -199,7 +199,7 @@ const LocationsPage: React.FC = () => {
           {/* Mobile Overlay Toggle */}
           <button 
             onClick={() => setIsMobileListOpen(true)}
-            className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 z-[1000] bg-white text-black px-8 py-4 text-[10px] font-bold uppercase tracking-widest shadow-2xl"
+            className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 z-[1000] bg-brand text-white px-8 py-4 text-xs font-bold uppercase tracking-widest shadow-2xl active:scale-95 transition-transform"
           >
             Show List
           </button>
@@ -223,18 +223,18 @@ const LocationsPage: React.FC = () => {
 
                   <div className="p-8">
                     <h2 className="serif text-3xl mb-2">{selectedLocation.name}</h2>
-                    <p className="text-white/40 text-xs mb-8 italic">{selectedLocation.address}, {selectedLocation.city}</p>
+                    <p className="text-white/60 text-sm mb-8 italic">{selectedLocation.address}, {selectedLocation.city}</p>
                     
                     <div className="space-y-6 mb-8">
                        <div className="flex items-start gap-4">
-                          <span className="text-white/20 text-[9px] uppercase tracking-widest w-16 pt-1">Hours:</span>
-                          <span className="text-white/70 text-[11px] tracking-wide">{selectedLocation.hours}</span>
+                          <span className="text-white/40 text-xs uppercase tracking-widest w-16 pt-1">Hours:</span>
+                          <span className="text-white/80 text-sm tracking-wide">{selectedLocation.hours}</span>
                        </div>
                        <div className="flex items-start gap-4">
-                          <span className="text-white/20 text-[9px] uppercase tracking-widest w-16 pt-1">Contact:</span>
-                          <span className="text-white/70 text-[11px] tracking-wide">{selectedLocation.phone}</span>
+                          <span className="text-white/40 text-xs uppercase tracking-widest w-16 pt-1">Contact:</span>
+                          <span className="text-white/80 text-sm tracking-wide">{selectedLocation.phone}</span>
                        </div>
-                       <p className="text-white/50 text-[11px] leading-relaxed font-light">
+                       <p className="text-white/60 text-sm leading-relaxed font-light">
                          {selectedLocation.description}
                        </p>
                     </div>
@@ -244,7 +244,7 @@ const LocationsPage: React.FC = () => {
                         href={`https://www.google.com/maps/dir/?api=1&destination=${selectedLocation.lat},${selectedLocation.lng}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="bg-white text-black flex items-center justify-center py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors"
+                        className="bg-brand text-white flex items-center justify-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
                        >
                          Directions
                        </a>
@@ -252,13 +252,13 @@ const LocationsPage: React.FC = () => {
                         href={selectedLocation.website}
                         target="_blank"
                         rel="noreferrer"
-                        className="border border-white/20 flex items-center justify-center py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white/5 transition-colors"
+                        className="border border-white/30 text-white/80 flex items-center justify-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
                        >
                          Website
                        </a>
                     </div>
                     <button 
-                      className="w-full mt-4 border border-white/5 py-4 text-[9px] font-bold uppercase tracking-widest text-white/30 hover:text-white transition-colors"
+                      className="w-full mt-4 border border-white/10 py-4 text-xs font-bold uppercase tracking-widest text-white/50 hover:text-white hover:border-white/30 transition-colors"
                       onClick={() => window.location.href = `tel:${selectedLocation.phone}`}
                     >
                       Call Shop

@@ -30,39 +30,39 @@ const offeringData = [
 
 const Offerings: React.FC = () => {
   return (
-    <section id="offerings" className="py-32 lg:py-64 bg-[#050505]">
+    <section id="offerings" className="py-24 lg:py-40 bg-[#050505]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-12">
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-16 lg:mb-24 gap-8 lg:gap-12">
           <div className="max-w-2xl">
-            <span className="text-white/30 uppercase tracking-[0.5em] text-[9px] font-bold mb-6 block">Capabilities</span>
+            <span className="text-white/50 uppercase tracking-[0.5em] text-[10px] font-bold mb-6 block">Capabilities</span>
             <h3 className="serif text-5xl md:text-7xl font-extralight tracking-tight">The <span className="italic">Structure</span> of Freedom.</h3>
           </div>
           <div className="text-right">
-             <p className="text-white/40 text-sm font-light max-w-xs ml-auto">
+             <p className="text-white/60 text-sm font-light max-w-xs ml-auto">
                 We provide the framework. You provide the grit. Our offerings are designed to elevate the standard of riding in the region.
              </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10">
           {offeringData.map((item, idx) => (
             <div 
               key={idx} 
-              className={`p-16 border border-white/5 group hover:bg-white/[0.02] transition-all duration-700 relative overflow-hidden`}
+              className={`p-8 lg:p-12 border-b md:border-r border-white/10 last:border-b-0 md:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 md:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+2)]:border-b lg:[&:nth-last-child(-n+3)]:border-b-0 group hover:bg-white/[0.03] transition-all duration-300 relative overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div className="w-1 h-1 bg-white rounded-full" />
+              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-1.5 h-1.5 bg-brand rounded-full" />
               </div>
               
-              <div className="mb-12">
-                <span className="serif text-4xl text-white/10 group-hover:text-white/30 transition-colors italic">0{idx + 1}</span>
+              <div className="mb-8">
+                <span className="serif text-3xl lg:text-4xl text-white/20 group-hover:text-brand/40 transition-colors italic">0{idx + 1}</span>
               </div>
               
-              <h4 className="uppercase tracking-[0.4em] text-[11px] font-bold mb-6 text-white group-hover:translate-x-2 transition-transform duration-500">{item.title}</h4>
-              <p className="text-white/40 text-sm leading-relaxed font-light group-hover:text-white/60 transition-colors">{item.desc}</p>
+              <h4 className="uppercase tracking-[0.3em] text-xs font-bold mb-4 text-white group-hover:text-brand transition-colors duration-300">{item.title}</h4>
+              <p className="text-white/60 text-sm leading-relaxed font-light group-hover:text-white/80 transition-colors">{item.desc}</p>
               
-              <div className="mt-12 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                 <div className="w-8 h-px bg-white/20" />
+              <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                 <div className="w-8 h-px bg-brand/50" />
               </div>
             </div>
           ))}

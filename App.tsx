@@ -16,7 +16,10 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'locations' | 'contact' | 'registry'>('home');
 
   const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 50);
+    // Use requestAnimationFrame for smoother scroll handling
+    requestAnimationFrame(() => {
+      setIsScrolled(window.scrollY > 50);
+    });
   }, []);
 
   const handleHashChange = useCallback(() => {
@@ -33,7 +36,8 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('hashchange', handleHashChange);
     
     // Check initial state

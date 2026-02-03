@@ -38,8 +38,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, currentView, onNavigate }) 
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-6 lg:px-16 ${
-          !isTransparent ? 'bg-black/90 backdrop-blur-xl py-4 lg:py-6 border-b border-white/5 shadow-2xl' : 'bg-transparent py-6 lg:py-10'
+        className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 px-6 lg:px-16 ${
+          !isTransparent ? 'bg-black/95 py-4 lg:py-6 border-b border-white/5 shadow-2xl' : 'bg-transparent py-6 lg:py-10'
         }`}
       >
         <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
@@ -54,21 +54,21 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, currentView, onNavigate }) 
             />
           </button>
           
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden lg:flex items-center space-x-10">
             {navItems.map(item => (
               <button 
                 key={item.view}
                 onClick={() => handleNavigate(item.view)}
-                className={`group relative overflow-hidden text-[10px] uppercase tracking-[0.3em] font-medium transition-colors ${currentView === item.view ? 'text-brand' : 'text-white/40 hover:text-brand'}`}
+                className={`group relative overflow-hidden text-xs uppercase tracking-[0.2em] font-medium transition-colors py-2 px-1 ${currentView === item.view ? 'text-brand' : 'text-white/60 hover:text-white'}`}
               >
-                <span className="block transition-transform duration-500 group-hover:-translate-y-full">{item.label}</span>
-                <span className="absolute top-0 left-0 block translate-y-full transition-transform duration-500 group-hover:translate-y-0 italic font-bold">{item.hoverLabel}</span>
+                <span className="block transition-transform duration-300 group-hover:-translate-y-full">{item.label}</span>
+                <span className="absolute top-2 left-1 block translate-y-full transition-transform duration-300 group-hover:translate-y-0 text-brand font-bold">{item.hoverLabel}</span>
               </button>
             ))}
 
             <a 
               href="#join" 
-              className="px-8 py-3 border border-brand/50 text-brand text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-brand hover:text-white transition-all duration-500"
+              className="px-6 py-3 bg-brand text-white text-xs uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-black transition-all duration-300 active:scale-95"
             >
               Join Us
             </a>
@@ -76,13 +76,19 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, currentView, onNavigate }) 
 
           {/* Hamburger Button */}
           <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 p-2 group z-[1001] relative"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsMobileMenuOpen(prev => !prev);
+            }}
+            className="lg:hidden flex flex-col justify-center items-center w-12 h-12 -mr-2 z-[1002] relative cursor-pointer"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
           >
-            <span className={`block w-6 h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[0px]' : '-translate-y-1'}`}></span>
-            <span className={`block w-6 h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-            <span className={`block w-6 h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[2px]' : 'translate-y-1'}`}></span>
+            <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[1px]' : '-translate-y-1.5'}`}></span>
+            <span className={`block w-6 h-[2px] bg-white transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[1px]' : 'translate-y-1.5'}`}></span>
           </button>
         </div>
       </nav>
@@ -146,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, currentView, onNavigate }) 
             }`}
             style={{ transitionDelay: isMobileMenuOpen ? '700ms' : '0ms' }}
           >
-            <div className="flex justify-between items-end text-white/30 text-[10px] uppercase tracking-widest">
+            <div className="flex justify-between items-end text-white/50 text-[10px] uppercase tracking-widest">
               <span>Est. 2012</span>
               <span>Balkan Brotherhood</span>
             </div>

@@ -64,9 +64,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
 
           <div className="mb-8 lg:mb-12">
             <div className="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4">
-              <span className="text-white/40 uppercase tracking-[0.4em] text-[10px] font-bold">{product.category}</span>
-              <div className="h-px w-6 lg:w-8 bg-white/10" />
-              <span className={`text-[10px] font-bold uppercase tracking-widest ${product.availability === 'In Stock' ? 'text-green-500' : 'text-white/60'}`}>{product.availability}</span>
+              <span className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold">{product.category}</span>
+              <div className="h-px w-6 lg:w-8 bg-white/20" />
+              <span className={`text-xs font-bold uppercase tracking-widest ${product.availability === 'In Stock' ? 'text-green-500' : 'text-white/60'}`}>{product.availability}</span>
             </div>
             <h2 className="serif text-3xl sm:text-4xl lg:text-7xl text-white mb-4 lg:mb-6 leading-tight">{product.name}</h2>
             <p className="text-2xl lg:text-3xl text-white font-light mb-6 lg:mb-8">{product.priceEur}€</p>
@@ -77,10 +77,10 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-8 lg:pt-12 border-t border-white/10">
               {product.sizes && (
                 <div>
-                  <h4 className="text-white/30 uppercase tracking-[0.3em] text-[10px] lg:text-[9px] font-bold mb-4 lg:mb-6">Select Size</h4>
+                  <h4 className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold mb-4 lg:mb-6">Select Size</h4>
                   <div className="flex flex-wrap gap-2 lg:gap-3">
                     {product.sizes.map(s => (
-                      <button key={s} className="w-11 h-11 lg:w-12 lg:h-12 border border-white/10 flex items-center justify-center text-[11px] font-bold hover:bg-white hover:text-black active:bg-brand active:text-white transition-all">
+                      <button key={s} className="w-11 h-11 lg:w-12 lg:h-12 border border-white/20 flex items-center justify-center text-xs font-bold hover:bg-white hover:text-black active:bg-brand active:text-white transition-all">
                         {s}
                       </button>
                     ))}
@@ -89,7 +89,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
               )}
               {product.colors && (
                 <div>
-                  <h4 className="text-white/30 uppercase tracking-[0.3em] text-[10px] lg:text-[9px] font-bold mb-4 lg:mb-6">Available Colors</h4>
+                  <h4 className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold mb-4 lg:mb-6">Available Colors</h4>
                   <div className="flex flex-wrap gap-3 lg:gap-4">
                     {product.colors.map(c => (
                       <div key={c} className="flex items-center gap-2 group py-1">
@@ -104,24 +104,24 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
           </div>
 
           <div className="mt-auto pt-8 lg:pt-12 border-t border-white/10">
-            <h4 className="text-white/30 uppercase tracking-[0.3em] text-[10px] lg:text-[9px] font-bold mb-6 lg:mb-8">Acquisition Channels</h4>
+            <h4 className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold mb-6 lg:mb-8">Acquisition Channels</h4>
             <div className="flex flex-col gap-3 lg:gap-4">
                <a 
                 href="#"
-                className="w-full bg-white text-black py-5 text-center text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-zinc-200 transition-colors"
+                className="w-full bg-brand text-white py-5 text-center text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-colors"
                >
                  Reserve via WhatsApp
                </a>
                <div className="grid grid-cols-2 gap-4">
-                  <a href="#" className="border border-white/10 py-5 text-center text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all">
+                  <a href="#" className="border border-white/20 py-5 text-center text-xs font-bold uppercase tracking-[0.3em] text-white/80 hover:bg-white hover:text-black transition-all">
                     Direct Message
                   </a>
-                  <a href="mailto:liaison@balkanmotoclub.com" className="border border-white/10 py-5 text-center text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all">
+                  <a href="mailto:liaison@balkanmotoclub.com" className="border border-white/20 py-5 text-center text-xs font-bold uppercase tracking-[0.3em] text-white/80 hover:bg-white hover:text-black transition-all">
                     Email Liaison
                   </a>
                </div>
             </div>
-            <p className="text-[8px] text-white/20 uppercase tracking-[0.4em] text-center mt-6 font-medium">
+            <p className="text-[10px] text-white/40 uppercase tracking-[0.3em] text-center mt-6 font-medium">
                Physical Pickup Available at HQ Belgrade or Niš.
             </p>
           </div>
