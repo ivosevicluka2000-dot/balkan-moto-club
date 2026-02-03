@@ -3,10 +3,10 @@ import React from 'react';
 
 const JoinUs: React.FC = () => {
   return (
-    <section id="join" className="relative py-48 lg:py-80 overflow-hidden bg-black">
-      {/* Dynamic Background */}
+    <section id="join" className="relative py-32 lg:py-80 overflow-hidden bg-black">
+      {/* Dynamic Background - Uses bg-scroll on mobile to fix iOS Safari issues */}
       <div 
-        className="absolute inset-0 bg-cover bg-fixed bg-center grayscale brightness-[0.25]"
+        className="absolute inset-0 bg-cover bg-scroll lg:bg-fixed bg-center grayscale brightness-[0.25]"
         style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558981420-c532902e58b4?auto=format&fit=crop&q=90&w=2400')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />

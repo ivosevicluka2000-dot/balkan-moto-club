@@ -124,13 +124,13 @@ const ContactPage: React.FC = () => {
               { title: "Official Inquiries", desc: "Partnerships, media, and legal matters.", label: "Send Email", link: "mailto:liaison@balkanmotoclub.com" },
               { title: "The Rendezvous", desc: "Coordinate your first presence at a ride.", label: "Find Meetup", link: "#network" }
             ].map((method, idx) => (
-              <div key={idx} className="bg-[#050505] p-12 flex flex-col items-start group hover:bg-white/[0.02] transition-colors reveal" style={{ transitionDelay: `${idx * 100}ms` }}>
-                <span className="text-[9px] text-white/20 uppercase tracking-widest mb-4">0{idx + 1}</span>
-                <h3 className="serif text-2xl mb-4 text-white/90">{method.title}</h3>
-                <p className="text-white/40 text-xs font-light leading-relaxed mb-8 flex-grow">{method.desc}</p>
+              <div key={idx} className="bg-[#050505] p-8 lg:p-12 flex flex-col items-start group hover:bg-white/[0.02] active:bg-white/[0.05] transition-colors reveal" style={{ transitionDelay: `${idx * 100}ms` }}>
+                <span className="text-[10px] lg:text-[9px] text-white/20 uppercase tracking-widest mb-4">0{idx + 1}</span>
+                <h3 className="serif text-xl lg:text-2xl mb-3 lg:mb-4 text-white/90">{method.title}</h3>
+                <p className="text-white/40 text-sm lg:text-xs font-light leading-relaxed mb-6 lg:mb-8 flex-grow">{method.desc}</p>
                 <a 
                   href={method.link}
-                  className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/60 group-hover:text-white transition-colors border-b border-white/10 pb-1"
+                  className="text-[11px] lg:text-[10px] uppercase tracking-[0.3em] font-bold text-white/60 group-hover:text-white transition-colors border-b border-white/10 pb-2 lg:pb-1"
                 >
                   {method.label}
                 </a>
@@ -141,9 +141,9 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Main Content: Form + Map info */}
-      <section className="py-32 lg:py-48">
+      <section className="py-16 lg:py-48">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             
             {/* Form Side */}
             <div className="lg:col-span-7 reveal">
@@ -154,10 +154,10 @@ const ContactPage: React.FC = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <form onSubmit={handleSubmit} className="space-y-8 lg:space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                   <div className="relative group">
-                    <label className="block text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-bold group-focus-within:text-white transition-colors">Full Name</label>
+                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Full Name</label>
                     <input 
                       required
                       type="text" 
@@ -165,11 +165,11 @@ const ContactPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Marko Petrovic"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
                     />
                   </div>
                   <div className="relative group">
-                    <label className="block text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-bold group-focus-within:text-white transition-colors">Email Address</label>
+                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Email Address</label>
                     <input 
                       required
                       type="email" 
@@ -177,30 +177,30 @@ const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="marko@provider.com"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                   <div className="relative group">
-                    <label className="block text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-bold group-focus-within:text-white transition-colors">Primary City</label>
+                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Primary City</label>
                     <input 
                       type="text" 
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
                       placeholder="e.g. Belgrade, RS"
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors placeholder:text-white/5"
                     />
                   </div>
                   <div className="relative group">
-                    <label className="block text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-bold group-focus-within:text-white transition-colors">Inquiry Subject</label>
+                    <label className="block text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-white/30 mb-3 lg:mb-4 font-bold group-focus-within:text-white transition-colors">Inquiry Subject</label>
                     <select 
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-sm font-light focus:outline-none focus:border-white transition-colors appearance-none"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-base lg:text-sm font-light focus:outline-none focus:border-white transition-colors appearance-none"
                     >
                       <option className="bg-[#111]" value="General Inquiry">General Inquiry</option>
                       <option className="bg-[#111]" value="Joining the Club">Joining the Club</option>

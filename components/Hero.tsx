@@ -55,17 +55,17 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           The premier motorcycle community in the Balkans. Join us for weekly rides, events, and the freedom of the open road.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full px-4 sm:px-0">
           <button 
             onClick={onNavigate}
-            className="group relative px-12 py-5 overflow-hidden"
+            className="group relative w-full sm:w-auto px-10 sm:px-12 py-4 sm:py-5 overflow-hidden"
           >
             <div className="absolute inset-0 bg-brand transition-transform duration-500 group-hover:scale-105" />
             <span className="relative z-10 text-black text-[11px] uppercase tracking-[0.4em] font-bold">Find a Location</span>
           </button>
           <a 
             href="#join"
-            className="group relative px-12 py-5 overflow-hidden border border-white/20 hover:border-brand/50 transition-colors duration-500"
+            className="group relative w-full sm:w-auto text-center px-10 sm:px-12 py-4 sm:py-5 overflow-hidden border border-white/20 hover:border-brand/50 active:bg-white/10 transition-colors duration-500"
           >
             <div className="absolute inset-0 bg-white/0 group-hover:bg-white transition-all duration-500" />
             <span className="relative z-10 text-white group-hover:text-black text-[11px] uppercase tracking-[0.4em] font-bold transition-colors duration-500">How to Join</span>
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-12 flex flex-col items-start space-y-4">
+      <div className="hidden md:flex absolute bottom-12 left-12 flex-col items-start space-y-4">
         <div className="flex space-x-4">
             <div className="w-1 h-1 rounded-full bg-brand animate-pulse" />
             <div className="w-1 h-1 rounded-full bg-brand/20" />
@@ -82,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         <span className="text-[8px] uppercase tracking-[0.4em] text-white/30">HQ: 44.7866° N, 20.4489° E</span>
       </div>
 
-      <div className="absolute bottom-12 right-12 flex flex-col items-end">
+      <div className="hidden md:flex absolute bottom-12 right-12 flex-col items-end">
         <div className="w-px h-24 bg-gradient-to-t from-brand to-transparent" />
       </div>
     </section>

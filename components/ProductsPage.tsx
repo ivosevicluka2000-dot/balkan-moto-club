@@ -49,44 +49,45 @@ const ProductsPage: React.FC = () => {
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-[80px] z-[500] bg-black/80 backdrop-blur-xl border-b border-white/5 px-6 lg:px-12 py-6">
-        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+      <section className="sticky top-[72px] lg:top-[80px] z-[500] bg-black/80 backdrop-blur-xl border-b border-white/5 px-4 lg:px-12 py-4 lg:py-6">
+        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 lg:gap-6">
           
-          <div className="flex flex-wrap items-center gap-4 w-full lg:w-auto">
+          {/* Categories - Horizontal scroll on mobile */}
+          <div className="flex items-center gap-2 lg:gap-4 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
             {categories.map(cat => (
               <button 
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 text-[10px] uppercase tracking-widest font-bold border transition-all ${selectedCategory === cat ? 'bg-white text-black border-white' : 'border-white/10 text-white/40 hover:border-white/30'}`}
+                className={`flex-shrink-0 px-4 py-2.5 lg:py-2 text-[11px] lg:text-[10px] uppercase tracking-widest font-bold border transition-all ${selectedCategory === cat ? 'bg-white text-black border-white' : 'border-white/10 text-white/40 hover:border-white/30 active:bg-white/10'}`}
               >
                 {cat}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-4 w-full lg:w-auto">
+          <div className="flex items-center gap-3 lg:gap-4 w-full lg:w-auto">
              <div className="relative flex-1 lg:w-[300px]">
                 <input 
                   type="text" 
-                  placeholder="SEARCH THE REGISTRY..."
+                  placeholder="SEARCH..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 px-6 py-2.5 text-[10px] uppercase tracking-widest focus:outline-none focus:border-white/40 text-white"
+                  className="w-full bg-white/5 border border-white/10 px-4 lg:px-6 py-3 lg:py-2.5 text-[11px] lg:text-[10px] uppercase tracking-widest focus:outline-none focus:border-white/40 text-white rounded-none"
                 />
              </div>
              
              <select 
                value={sortBy}
                onChange={(e) => setSortBy(e.target.value as any)}
-               className="bg-white/5 border border-white/10 px-4 py-2.5 text-[10px] uppercase tracking-widest text-white/50 focus:outline-none focus:border-white/40"
+               className="bg-white/5 border border-white/10 px-3 lg:px-4 py-3 lg:py-2.5 text-[11px] lg:text-[10px] uppercase tracking-widest text-white/50 focus:outline-none focus:border-white/40 rounded-none"
              >
-                <option value="none" className="bg-black">SORT BY</option>
-                <option value="low-high" className="bg-black">PRICE: LOW-HIGH</option>
-                <option value="high-low" className="bg-black">PRICE: HIGH-LOW</option>
+                <option value="none" className="bg-black">SORT</option>
+                <option value="low-high" className="bg-black">PRICE ↑</option>
+                <option value="high-low" className="bg-black">PRICE ↓</option>
              </select>
 
              {(searchQuery || selectedCategory !== 'All' || sortBy !== 'none') && (
-               <button onClick={clearFilters} className="text-[9px] uppercase tracking-widest text-white/30 hover:text-white transition-colors underline underline-offset-4">
+               <button onClick={clearFilters} className="text-[10px] lg:text-[9px] uppercase tracking-widest text-white/30 hover:text-white active:text-brand transition-colors underline underline-offset-4 py-2">
                  Reset
                </button>
              )}
@@ -130,9 +131,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onClick }) =>
   return (
     <div 
       onClick={onClick}
-      className="bg-[#050505] group cursor-pointer overflow-hidden p-8 flex flex-col hover:bg-white/[0.02] transition-colors"
+      className="bg-[#050505] group cursor-pointer overflow-hidden p-4 sm:p-6 lg:p-8 flex flex-col hover:bg-white/[0.02] active:bg-white/[0.05] transition-colors"
     >
-      <div className="relative aspect-square mb-8 overflow-hidden bg-zinc-900">
+      <div className="relative aspect-square mb-4 sm:mb-6 lg:mb-8 overflow-hidden bg-zinc-900">
         <img 
           src={`${product.images[0].split('?')[0]}?auto=format&fit=crop&q=70&w=600`}
           alt={product.name} 
@@ -140,14 +141,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onClick }) =>
           decoding="async"
           className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-110 group-hover:brightness-100 transition-all duration-[1500ms]"
         />
-        <div className="absolute top-4 left-4 flex flex-col gap-2">
+        <div className="absolute top-3 left-3 lg:top-4 lg:left-4 flex flex-col gap-2">
            {product.tags.map(tag => (
-             <span key={tag} className="bg-white text-black px-2 py-0.5 text-[7px] font-bold uppercase tracking-widest">{tag}</span>
+             <span key={tag} className="bg-white text-black px-2 py-1 text-[8px] lg:text-[7px] font-bold uppercase tracking-widest">{tag}</span>
            ))}
         </div>
         {product.availability !== 'In Stock' && (
-           <div className="absolute bottom-4 right-4">
-              <span className={`px-2 py-0.5 text-[7px] font-bold uppercase tracking-widest border ${product.availability === 'Sold Out' ? 'border-red-500/50 text-red-500' : 'border-white/30 text-white/50'}`}>
+           <div className="absolute bottom-3 right-3 lg:bottom-4 lg:right-4">
+              <span className={`px-2 py-1 text-[8px] lg:text-[7px] font-bold uppercase tracking-widest border ${product.availability === 'Sold Out' ? 'border-red-500/50 text-red-500' : 'border-white/30 text-white/50'}`}>
                 {product.availability}
               </span>
            </div>
@@ -156,15 +157,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onClick }) =>
 
       <div className="flex-grow flex flex-col">
         <div className="flex justify-between items-start mb-2">
-           <span className="text-white/30 text-[9px] uppercase tracking-widest">{product.category}</span>
-           <span className="text-white text-[11px] font-bold">{product.priceEur}€</span>
+           <span className="text-white/30 text-[10px] lg:text-[9px] uppercase tracking-widest">{product.category}</span>
+           <span className="text-white text-sm lg:text-[11px] font-bold">{product.priceEur}€</span>
         </div>
-        <h3 className="serif text-xl text-white/90 group-hover:text-white transition-colors mb-4">{product.name}</h3>
-        <p className="text-white/40 text-[11px] font-light leading-relaxed line-clamp-2">{product.shortDesc}</p>
+        <h3 className="serif text-lg sm:text-xl text-white/90 group-hover:text-white transition-colors mb-3 lg:mb-4">{product.name}</h3>
+        <p className="text-white/40 text-xs lg:text-[11px] font-light leading-relaxed line-clamp-2">{product.shortDesc}</p>
         
-        <div className="mt-8 flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 duration-500">
+        <div className="mt-6 lg:mt-8 flex items-center space-x-4 lg:opacity-0 lg:group-hover:opacity-100 transition-all lg:translate-y-2 lg:group-hover:translate-y-0 duration-500">
            <div className="w-4 h-[1px] bg-white/40" />
-           <span className="text-[8px] uppercase tracking-[0.3em] font-bold text-white/60">Inspect Gear</span>
+           <span className="text-[9px] lg:text-[8px] uppercase tracking-[0.3em] font-bold text-white/60">View Details</span>
         </div>
       </div>
     </div>

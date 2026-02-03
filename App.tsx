@@ -55,7 +55,7 @@ const App: React.FC = () => {
     } else if (view === 'registry') {
       window.location.hash = 'registry';
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
