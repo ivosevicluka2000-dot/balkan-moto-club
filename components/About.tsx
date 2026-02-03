@@ -22,9 +22,9 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 lg:py-40 bg-[#050505]">
+    <section id="about" ref={sectionRef} className="py-16 md:py-24 lg:py-40 bg-[#050505]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-start">
           
           <div className="lg:col-span-5 relative reveal">
             <div className="aspect-[3/4] overflow-hidden grayscale contrast-125 brightness-75 border border-white/5">
@@ -47,12 +47,12 @@ const About: React.FC = () => {
                 <div className="h-px w-12 bg-white/20" />
             </div>
             
-            <h2 className="serif text-5xl md:text-7xl lg:text-8xl mb-12 leading-[1.1] font-extralight tracking-tight">
+            <h2 className="serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 md:mb-12 leading-[1.1] font-extralight tracking-tight">
               Built on <span className="italic">Trust</span>, <br />
               Driven by <span className="italic">Steel.</span>
             </h2>
             
-            <div className="max-w-xl space-y-10 text-white/70 text-base md:text-lg leading-relaxed font-light">
+            <div className="max-w-xl space-y-6 md:space-y-10 text-white/70 text-base md:text-lg leading-relaxed font-light">
               <p>
                 The Balkan Moto Club is not for everyone. We do not exist for the weekend hobbyist or the social media enthusiast. We exist for those who understand that the road is a teacher, and the machine is a mirror.
               </p>
@@ -60,7 +60,7 @@ const About: React.FC = () => {
                 Our creed is simple: Respect the line. Protect the pack. Maintain the craft. Whether traversing the rugged peaks of the Dinaric Alps or the urban labyrinth of Belgrade, we move with a unified purpose that transcends borders.
               </p>
               
-              <div className="pt-8 border-t border-white/10 grid grid-cols-2 gap-8">
+              <div className="pt-6 md:pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                 <div>
                   <h4 className="text-white text-[10px] uppercase tracking-[0.3em] font-bold mb-3">Discipline</h4>
                   <p className="text-xs font-light text-white/50 leading-relaxed">Safety is not a checklist; it is an instinct honed through thousands of shared kilometers.</p>

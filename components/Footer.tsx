@@ -7,14 +7,14 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="bg-black py-12 lg:py-20 border-t border-white/10">
+    <footer className="bg-black py-10 md:py-12 lg:py-20 border-t border-white/10">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-10 md:mb-12 lg:mb-20">
           
-          <div className="col-span-2">
+          <div className="col-span-1 sm:col-span-2">
             <button 
               onClick={() => onNavigate('home')}
-              className="flex items-center space-x-3 mb-6 lg:mb-8 group"
+              className="flex items-center space-x-3 mb-4 md:mb-6 lg:mb-8 group"
             >
               <div className="w-8 h-8 border border-white/60 flex items-center justify-center rotate-45 group-hover:border-brand group-hover:bg-brand transition-all duration-300">
                 <span className="text-white group-hover:text-white -rotate-45 font-bold text-[10px]">BM</span>
@@ -48,9 +48,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/40 uppercase tracking-widest">© 2024 Balkan Moto Club — Built for the open road.</p>
-          <p className="text-xs text-white/40 uppercase tracking-widest">V. 2.01 // Belgrade HQ</p>
+        <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+          <p className="text-[10px] md:text-xs text-white/40 uppercase tracking-widest text-center md:text-left">© 2024 Balkan Moto Club — Built for the open road.</p>
+          <p className="text-[10px] md:text-xs text-white/40 uppercase tracking-widest">V. 2.01 // Belgrade HQ</p>
         </div>
       </div>
     </footer>

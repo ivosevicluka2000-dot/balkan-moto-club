@@ -44,28 +44,28 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <div className="h-px w-8 bg-brand/50" />
         </div>
         
-        <h1 className="serif text-brand text-6xl md:text-9xl lg:text-[10rem] mb-12 leading-[0.85] font-extralight tracking-tight">
+        <h1 className="serif text-brand text-5xl sm:text-6xl md:text-9xl lg:text-[10rem] mb-8 md:mb-12 leading-[0.85] font-extralight tracking-tight">
           Balkan <br />
           <span className="italic font-light text-white opacity-80">Moto Club</span>
         </h1>
         
-        <p className="max-w-2xl mx-auto text-white/70 text-sm md:text-lg font-light tracking-wide mb-16 leading-relaxed">
+        <p className="max-w-2xl mx-auto text-white/70 text-sm md:text-lg font-light tracking-wide mb-10 md:mb-16 leading-relaxed px-4 sm:px-0">
           The premier motorcycle community in the Balkans. Join us for weekly rides, events, and the freedom of the open road.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 w-full px-4 sm:px-0">
           <button 
             onClick={onNavigate}
-            className="group relative w-full sm:w-auto px-10 sm:px-12 py-4 sm:py-5 overflow-hidden shadow-lg shadow-brand/20 active:scale-95 transition-transform"
+            className="group relative w-full sm:w-auto px-8 sm:px-12 py-5 overflow-hidden shadow-lg shadow-brand/20 active:scale-95 transition-transform"
           >
             <div className="absolute inset-0 bg-brand transition-all duration-300 group-hover:bg-white" />
-            <span className="relative z-10 text-white group-hover:text-black text-xs uppercase tracking-[0.3em] font-bold transition-colors">Find a Location</span>
+            <span className="relative z-10 text-white group-hover:text-black text-sm sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold transition-colors">Find a Location</span>
           </button>
           <a 
             href="#join"
-            className="group relative w-full sm:w-auto text-center px-10 sm:px-12 py-4 sm:py-5 overflow-hidden border border-white/30 hover:border-white active:scale-95 transition-all duration-300"
+            className="group relative w-full sm:w-auto text-center px-8 sm:px-12 py-5 overflow-hidden border border-white/30 hover:border-white active:scale-95 transition-all duration-300"
           >
-            <span className="relative z-10 text-white/80 group-hover:text-white text-xs uppercase tracking-[0.3em] font-bold transition-colors">How to Join</span>
+            <span className="relative z-10 text-white/80 group-hover:text-white text-sm sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold transition-colors">How to Join</span>
           </a>
         </div>
       </div>

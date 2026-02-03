@@ -7,18 +7,18 @@ interface LocationSectionProps {
 
 const LocationSection: React.FC<LocationSectionProps> = ({ onNavigate }) => {
   return (
-    <section id="location" className="py-24 lg:py-32 bg-[#0a0a0a] border-y border-white/10">
+    <section id="location" className="py-16 md:py-24 lg:py-32 bg-[#0a0a0a] border-y border-white/10">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-16">
           
           <div className="lg:w-1/3">
-            <span className="text-white/50 uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block">The Network</span>
-            <h2 className="serif text-4xl lg:text-5xl mb-6">Our Locations</h2>
-            <p className="text-white/60 text-sm mb-8 leading-relaxed">
+            <span className="text-white/50 uppercase tracking-[0.3em] md:tracking-[0.5em] text-[10px] font-bold mb-3 md:mb-4 block">The Network</span>
+            <h2 className="serif text-3xl sm:text-4xl lg:text-5xl mb-4 md:mb-6">Our Locations</h2>
+            <p className="text-white/60 text-sm mb-6 md:mb-8 leading-relaxed">
               We have chapters active throughout the region. Come visit us or join a ride.
             </p>
             
-            <div className="space-y-6 mb-10">
+            <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
               <div>
                 <h4 className="uppercase tracking-widest text-xs font-bold mb-2 text-white/80">Belgrade HQ</h4>
                 <p className="text-white/60 text-sm font-light">12 Bulevar Kralja Petra, Belgrade, Serbia</p>
@@ -33,11 +33,11 @@ const LocationSection: React.FC<LocationSectionProps> = ({ onNavigate }) => {
             <div className="flex flex-col space-y-3">
               <button 
                 onClick={onNavigate}
-                className="bg-brand text-center text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300 active:scale-95"
+                className="bg-brand text-center text-white px-6 md:px-8 py-4 text-sm sm:text-xs font-bold uppercase tracking-[0.15em] md:tracking-widest hover:bg-white hover:text-black transition-colors duration-300 active:scale-95"
               >
                 View All Locations
               </button>
-              <button className="border border-white/30 text-white/80 px-8 py-4 text-xs font-bold uppercase tracking-widest hover:border-white hover:text-white transition-colors duration-300 active:scale-95">
+              <button className="border border-white/30 text-white/80 px-6 md:px-8 py-4 text-sm sm:text-xs font-bold uppercase tracking-[0.15em] md:tracking-widest hover:border-white hover:text-white transition-colors duration-300 active:scale-95">
                 Contact Us
               </button>
             </div>
@@ -45,7 +45,7 @@ const LocationSection: React.FC<LocationSectionProps> = ({ onNavigate }) => {
 
           <div className="lg:w-2/3">
             <div 
-              className="relative h-[350px] lg:h-[500px] w-full bg-zinc-900 overflow-hidden grayscale contrast-125 border border-white/10 group cursor-pointer" 
+              className="relative h-[280px] sm:h-[350px] lg:h-[500px] w-full bg-zinc-900 overflow-hidden grayscale contrast-125 border border-white/10 group cursor-pointer" 
               onClick={onNavigate}
             >
               {/* Mock Map View - Optimized */}

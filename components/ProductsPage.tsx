@@ -37,20 +37,20 @@ const ProductsPage: React.FC = () => {
   return (
     <div className="bg-[#050505] min-h-screen pt-[100px]">
       {/* Hero Section */}
-      <section className="relative h-[40dvh] flex items-center justify-center overflow-hidden border-b border-white/10">
+      <section className="relative h-[30dvh] sm:h-[40dvh] flex items-center justify-center overflow-hidden border-b border-white/10">
         <div 
           className="absolute inset-0 bg-cover bg-center grayscale brightness-[0.2]"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&q=70&w=1600')` }}
         />
         <div className="relative z-10 text-center px-6">
-          <span className="text-white/50 uppercase tracking-[0.5em] text-[10px] font-bold mb-4 block">The Registry</span>
-          <h1 className="serif text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tight text-white">Gear & <span className="italic">Supplies.</span></h1>
+          <span className="text-white/50 uppercase tracking-[0.3em] md:tracking-[0.5em] text-[10px] font-bold mb-3 md:mb-4 block">The Registry</span>
+          <h1 className="serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extralight tracking-tight text-white">Gear & <span className="italic">Supplies.</span></h1>
         </div>
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-[72px] lg:top-[80px] z-[500] bg-black/95 border-b border-white/10 px-4 lg:px-12 py-4 lg:py-6">
-        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 lg:gap-6">
+      <section className="sticky top-[72px] lg:top-[80px] z-[500] bg-black/95 border-b border-white/10 px-4 lg:px-12 py-3 lg:py-6">
+        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 lg:gap-6">
           
           {/* Categories - Horizontal scroll on mobile */}
           <div className="flex items-center gap-2 lg:gap-3 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
@@ -58,14 +58,14 @@ const ProductsPage: React.FC = () => {
               <button 
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`flex-shrink-0 px-4 py-2.5 text-xs uppercase tracking-widest font-bold border transition-all duration-200 active:scale-95 ${selectedCategory === cat ? 'bg-brand text-white border-brand' : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white active:bg-white/10'}`}
+                className={`flex-shrink-0 px-4 py-3 text-xs uppercase tracking-widest font-bold border transition-all duration-200 active:scale-95 ${selectedCategory === cat ? 'bg-brand text-white border-brand' : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white active:bg-white/10'}`}
               >
                 {cat}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center gap-3 lg:gap-4 w-full lg:w-auto">
+          <div className="flex items-center gap-2 lg:gap-4 w-full lg:w-auto">
              <div className="relative flex-1 lg:w-[280px]">
                 <input 
                   type="text" 
@@ -79,11 +79,11 @@ const ProductsPage: React.FC = () => {
              <select 
                value={sortBy}
                onChange={(e) => setSortBy(e.target.value as any)}
-               className="bg-white/5 border border-white/20 px-4 py-3 text-sm text-white/70 focus:outline-none focus:border-brand cursor-pointer"
+               className="bg-white/5 border border-white/20 px-3 md:px-4 py-3 text-sm text-white/70 focus:outline-none focus:border-brand cursor-pointer min-w-0"
              >
-                <option value="none" className="bg-black">Sort by</option>
-                <option value="low-high" className="bg-black">Price: Low → High</option>
-                <option value="high-low" className="bg-black">Price: High → Low</option>
+                <option value="none" className="bg-black">Sort</option>
+                <option value="low-high" className="bg-black">Low → High</option>
+                <option value="high-low" className="bg-black">High → Low</option>
              </select>
 
              {(searchQuery || selectedCategory !== 'All' || sortBy !== 'none') && (
